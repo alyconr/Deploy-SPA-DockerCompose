@@ -7,7 +7,7 @@
   <img src="./src/assets/images/LOGOv2.png" alt="logo" width="250" height="250" />
   <br/>
 
-  <h3><b>Deploy a Dockerized JavsScript SPA with Webpack, Express and GitHub Actions into AWS EC2 Instance </b></h3>
+  <h3><b>Deploy a Dockerized JavaScript SPA with Webpack, Express and GitHub Actions into AWS EC2 Instance </b></h3>
 
 </div>
 
