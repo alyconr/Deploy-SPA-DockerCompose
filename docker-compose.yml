@@ -1,0 +1,21 @@
+version: '3.9'
+
+services: 
+  nginx:
+    container_name: spa-app-docker
+    restart: always
+    image: 810129/spa-app:latest
+    ports:
+      - "80:80"
+      - "443:443"
+     
+    networks:
+      - mynetwork
+
+networks:  
+  mynetwork:
+    driver: bridge 
+           
+
+            
+             
