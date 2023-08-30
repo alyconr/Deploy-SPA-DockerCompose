@@ -1,11 +1,11 @@
-const cryptoCards = (crypto) => `
+const cryptoCards = (cryptoData) => `
 <div class='card h-100 '>
-  <img  src='${crypto.icon_url}' class='card-img-top' alt='...' />
+  <img  src='https://www.cryptocompare.com/${cryptoData.LogoUrl}' class='card-img-top' alt='...' />
   <div class='card-body'>
-    <h5 class='card-title'>${crypto.name_full}</h5>
+    <h5 class='card-title'>${cryptoData.InternalName}</h5>
     <p class='card-text'>
-    Symbol: ${crypto.symbol}<br>
-    Max Supply: ${crypto.max_supply}
+    Country: ${cryptoData.Country}<br>
+    Total Volume 24h: ${cryptoData.TOTALVOLUME24H.BTC}
     </p>
   </div>
 </div>

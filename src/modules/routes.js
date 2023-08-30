@@ -6,10 +6,10 @@ export const router = () => {
 
   if (path === '/home') {
     renderCryptos();
-  } else if (path === '/maxlink') {
-    renderCryptos('maxlink');
-  } else if (path === '/lowlink') {
-    renderCryptos('lowlink');
+  } else if (path === '/maxvolume') {
+    renderCryptos('maxvolume');
+  } else if (path === '/lowvolume') {
+    renderCryptos('lowvolume');
   } else if (path === '/profile') {
     renderProfile();
   } else {

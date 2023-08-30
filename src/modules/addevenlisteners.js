@@ -5,8 +5,8 @@ import { router } from './routes.js';
 export const addEvents = () => {
   try {
     const homelink = document.getElementById('homelink');
-    const maxlink = document.getElementById('maxlink');
-    const lowlink = document.getElementById('lowlink');
+    const maxlink = document.getElementById('maxvolume');
+    const lowlink = document.getElementById('lowvolume');
     const profilelink = document.getElementById('profile-card');
 
     router();
@@ -20,15 +20,15 @@ export const addEvents = () => {
 
     maxlink.addEventListener('click', (event) => {
       event.preventDefault();
-      window.history.pushState({}, '', 'maxlink');
-      renderCryptos('maxlink');
+      window.history.pushState({}, '', 'maxvolume');
+      renderCryptos('maxvolume');
       router();
     });
 
     lowlink.addEventListener('click', (event) => {
       event.preventDefault();
-      window.history.pushState({}, '', 'lowlink');
-      renderCryptos('lowlink');
+      window.history.pushState({}, '', 'lowvolume');
+      renderCryptos('lowvolume');
       router();
     });
 

@@ -1,29 +1,35 @@
 import { getCrypto } from './getCrypto.js';
 import { cryptoCards } from './templates.js';
 
-export const renderCryptos = async (filterKey) => {
+export const renderCryptos = async (filterkey) => {
   try {
     const mainContent = document.getElementById('shows');
     const container = document.getElementById('shows-character');
     container.innerHTML = '';
 
-    const cryptos = await getCrypto();
+    const dataObject = await getCrypto();
 
-    let filteredCryptos = cryptos;
+    const cryptos = Object.values(dataObject);
 
-    if (filterKey === 'maxlink') {
-      filteredCryptos = cryptos.filter(
-        (crypto) => crypto.max_supply > 500000000
+    let filterCryptos = dataObject;
+
+    if(filterkey === 'maxvolume'){
+     filterCryptos = cryptos.filter((cryptoData) =>  cryptoData.TOTALVOLUME24H.BTC > 1000
       );
-      filteredCryptos.sort((a, b) => b.max_supply - a.max_supply);
-    } else if (filterKey === 'lowlink') {
-      filteredCryptos = cryptos.filter(
-        (crypto) => crypto.max_supply < 500000000
+      filterCryptos.sort((a, b) =>  b.TOTALVOLUME24H.BTC - a.TOTALVOLUME24H.BTC
       );
-      filteredCryptos.sort((a, b) => a.max_supply - b.max_supply);
+    } else if(filterkey === 'lowvolume'){
+      filterCryptos = cryptos.filter((cryptoData) => 
+      cryptoData.TOTALVOLUME24H.BTC < 1000
+      );
+      filterCryptos.sort((a, b) => 
+         a.TOTALVOLUME24H.BTC - b.TOTALVOLUME24H.BTC
+      );
+
     }
+    
 
-    filteredCryptos.forEach((crypto) => {
+    filterCryptos.forEach((cryptoData) => {
       const card = document.createElement('div');
       card.classList.add(
         'col',
@@ -33,7 +39,7 @@ export const renderCryptos = async (filterKey) => {
         'col-lg-3',
         'py-3'
       );
-      card.innerHTML = cryptoCards(crypto);
+      card.innerHTML = cryptoCards(cryptoData);
       container.appendChild(card);
     });
     mainContent.appendChild(container);
