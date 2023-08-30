@@ -1,0 +1,19 @@
+name: Deploy Application
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run deployment script - dev
+        run: |
+          bash deployment.sh -u admin -i 3.238.202.155 -s 44.197.116.55  -d SPA-APP -f EXPRESS-SERVER  -e prod
+
