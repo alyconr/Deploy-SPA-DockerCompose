@@ -7,7 +7,7 @@
   <img src="./src/assets/images/LOGOv2.png" alt="logo" width="250" height="250" />
   <br/>
 
-  <h3><b>Deploy a Dockerized JavaScript SPA with Webpack, Express and GitHub Actions into AWS EC2 Instance </b></h3>
+  <h3><b>Deploying Hybrid SSR-SPA App on AWS Using Bash Script Automation </b></h3>
 
 </div>
 
@@ -38,10 +38,10 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [SPA DOCKER, NGINX & GITHUB ACTIONS ] <a name="about-project"></a>
+# 📖 [SPA-SSR, DOCKER, NGINX, OPENSSL, BASH  & AWS ] <a name="about-project"></a>
 
-  **[SPA DOCKER, NGINX & GITHUB ACTIONS]**  This repository provides an example of how to deploy a JavaScript Single Page Application which was built using  plain JavaScript, Webpack and Express.
-  The porpose of this project is to provide a general overview of  how to implement a small  CI/CD pipleline for this SPA and how to  use tools like Docker, Nginx, openSSL and GitHub Actions to deploy the SPA in a production environment on AWS EC2 instances.
+  **[SPA-SSR, DOCKER, NGINX, OPENSSL, BASH  & AWS]**  This repository provides an example of how to deploy a JavaScript Single Page Application which was built using  plain JavaScript, Webpack and Express.
+  The main goal is to show how to deploy SPA-SSR application on AWS without relying on any GitOps methodology. The idea is to demonstrate an alternative approach to application deployment that is not dependent on any configuration management tool, infrastructure automation tool, or CI/CD pipeline.
    
 
 ### Tech Stack <a name="tech-stack"></a>
@@ -55,6 +55,7 @@
 <li> OpenSSL </li>
 <li> github actions  </li>
 <li> Bash Script </li>
+<li> AWS EC2 Instances,VPC, ROUTE TABLE, SECURITY GROUP , NAT GATEWAY, INTERNET GATEWAY </li>
 
 
 <!-- Features -->
@@ -67,9 +68,8 @@
 - **[ES6 Modules]**
 - **[Webpack Bundling ]**
 - **[Express Server to handle routing]**
-- **[CI/CD Pipeline ]**
 - **[Docker Integration]**
-- **[Nginx Configuation]**
+- **[Nginx Configuration]**
 - **[OpenSSL Configuation]**
 - **[AWS EC2 Instances Deploy]**
 
@@ -86,9 +86,6 @@ Express is configured to dynamically render menu paths on the server side, elimi
 ## Webpack Integration: 
 The project employs Webpack for bundling and optimizing client-side assets, resulting in a performant and efficient front-end.
 
-## CI/CD Pipeline: 
-Understand how to design a small CI/CD pipeline to automate build, and deployment processes, ensuring efficiency and reliability.
-
 ## Docker Integration: 
 The project utilizes Docker Compose to  build and  run the application to AWS EC2 instances.
 
@@ -101,9 +98,6 @@ The project uses a bash scrit to automate the deployment of the application to A
 
 ## OpenSSL Configuation: 
 The project utilizes OpenSSL to generate a self-signed certificate for Nginx.
-
-## GitHub Actions: 
-Automate the workflow from building the project to deploying it to AWS EC2 instances.
 
 ## AWS EC2 Instances Deploy: 
 The project deploys the application  into an AWS EC2 instance.
@@ -138,7 +132,6 @@ To run this project  you need the following tools installed:
 - [OpenSSL ]
 - [Bash Script ]
 - [Nginx ]
-- [CI/CD GITHUB ACTIONS ]
 - [AWS EC2 Instances ]
 
 
@@ -197,8 +190,21 @@ To test the ESLint linter:
 
 ### Deployment
 
-    soon ...
+ The image below shows the arquitecture with all the resources configured:
+ 
+ <img src="./src/assets/images/awsnginx.drawio.png" alt="deploy-SPA-DockerCompose" width="500" height="300">
 
+Run the following command to install the necessary dependencies from the bash script file:
+
+```sh
+    bash installpackages.sh -u $USER -i $IP_PUBLIC_SERVER -s $IP_PRIVATE_SERVER
+```
+
+Run the following command to deploy the project to AWS EC2 instances:
+
+```sh
+     bash deployment.sh  -u $USER  -i $IP_PUBLIC_SERVER -s $IP_PRIVATE_SERVER -d $APP_FOLDER -f $EXPRESS_FOLDER -e prod 
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
