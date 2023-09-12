@@ -191,8 +191,9 @@ To test the ESLint linter:
 ### Deployment
 
  The image below shows the arquitecture with all the resources configured:
- 
- <img align= "center" src="./src/assets/images/awsnginx.drawio.png" alt="deploy-SPA-DockerCompose" width="500" height="500">
+<div align= "center">
+ <img  src="./src/assets/images/awsnginx.drawio.png" alt="deploy-SPA-DockerCompose" width="500" height="500">
+</div>
 
 Run the following command to install the necessary dependencies from the bash script file:
 
