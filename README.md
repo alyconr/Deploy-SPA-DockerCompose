@@ -42,6 +42,10 @@
 
   **[SPA-SSR, DOCKER, NGINX, OPENSSL, BASH  & AWS]**  This repository provides an example of how to deploy a JavaScript Single Page Application which was built using  plain JavaScript, Webpack and Express.
   The main goal is to show how to deploy SPA-SSR application on AWS without relying on any GitOps methodology. The idea is to demonstrate an alternative approach to application deployment that is not dependent on any configuration management tool, infrastructure automation tool, or CI/CD pipeline.
+
+<div align="center">
+  <img src="./src/assets/images/STACKDOCKER.drawio.png" alt="logo" width="500" height="200" />
+</div>
    
 
 ### Tech Stack <a name="tech-stack"></a>
